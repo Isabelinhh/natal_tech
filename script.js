@@ -187,7 +187,7 @@ function rendernatal(natal) {
   if (!grid) return;
 
   grid.innerHTML = '';
-  const items = natal.slice(0, 3);
+  const items = natal.slice(0, 6);
 
   items.forEach(p => {
     const discountCalc = (p && p.old_price && p.new_price)
@@ -245,7 +245,7 @@ async function loadnatal() {
         .from('natal')
         .select('*')
         .order('created_at', { ascending: false })
-        .limit(3);
+        .limit(6);
 
       if (error) throw error;
       if (Array.isArray(data) && data.length) {
